@@ -12,6 +12,7 @@
 
 		<!-- Styles -->
 		<!-- Bootstrap CSS -->
+
 		<link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
 		<!-- Animate CSS -->
 		<link href="{{ asset('css/animate.min.css')}}" rel="stylesheet">
@@ -147,8 +148,26 @@
                              </form>
 
                              @endguest
+                             <form method ="POST" action="{{Route('search')}}">
+                            <li><div class="form-group">
+                                @csrf
+                                <input type="text" required name="search" class="form-control" id="search" aria-describedby="emailHelp" placeholder="Search Here">
+
+                              <label style="color:white" >Search by:</label>
+                              <select class="form-select" name="category" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="artist">artist</option>
+                                <option value="album" >album</option>
+                                <option value="year"  >year</option>
+                              </select>
+                              <button type="submit" class="btn btn-primary">Search</button>
+                               </div>
+
+                            </li>
 
 							</ul>
+                        </form>
+
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
 				</nav>

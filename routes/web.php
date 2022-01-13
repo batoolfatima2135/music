@@ -51,3 +51,6 @@ Route::get('admin-password/reset',[App\Http\Controllers\Admin\ForgotPasswordCont
 Route::get('admin-password/reset/{token}',[App\Http\Controllers\Admin\ResetPasswordController::class, 'showResetForm '])->name('admin.password.reset');
 Route::post('/admin-register',[App\Http\Controllers\Admin\RegisterController::class, 'register']);
 Route::post('/admin-logout',[App\Http\Controllers\Admin\LoginController::class, 'logout'])->name('admin.logout');
+
+//Search Route
+Route::post('/search', [App\Http\Controllers\FrontendController::class, 'search'])->name('search');
